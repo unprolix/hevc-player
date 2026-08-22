@@ -4,9 +4,12 @@ A free, standalone HEVC/H.265 video player for Windows. No paid codecs, no Micro
 
 ![platform](https://img.shields.io/badge/platform-Windows-blue) ![license](https://img.shields.io/badge/license-MIT-green)
 
-## Download
+## Download & run
 
-Grab **`HEVCPlayer.exe`** from the [Releases](../../releases) page — it's fully portable. Run it and you're done. No Python, no installer.
+1. Go to [Releases](../../releases) and download **`HEVCPlayer.exe`**
+2. Double-click it
+
+That's it. It's fully portable — a brand new Windows 10/11 PC needs **nothing installed**: no Python, no codecs, no installer.
 
 ## Features
 
@@ -17,20 +20,6 @@ Grab **`HEVCPlayer.exe`** from the [Releases](../../releases) page — it's full
 - Codec/resolution/fps badge overlay
 - A/V sync driven by the audio clock
 - Registerable as your system default player (see below)
-
-## Controls
-
-| Key / Action | Function |
-|---|---|
-| `Space` | Play / Pause |
-| `←` / `→` | Seek ∓10s |
-| `↑` / `↓` | Volume |
-| Mouse wheel | Volume |
-| `F` / double-click | Fullscreen |
-| `Esc` | Exit fullscreen |
-| `O` | Open file |
-| Click on video | Play / Pause |
-| `Q` | Quit |
 
 ## Set as default media player
 
@@ -49,19 +38,26 @@ HKCU\Software\RegisteredApplications : "HEVC Player" = "Software\HEVCPlayer\Capa
 
 (Repeat the FileAssociations value for each extension you want.)
 
-## Run from source
+## Controls
 
-Requires Python 3.11+ on Windows.
+| Key / Action | Function |
+|---|---|
+| `Space` | Play / Pause |
+| `←` / `→` | Seek ∓10s |
+| `↑` / `↓` | Volume |
+| Mouse wheel | Volume |
+| `F` / double-click | Fullscreen |
+| `Esc` | Exit fullscreen |
+| `O` | Open file |
+| Click on video | Play / Pause |
+| `Q` | Quit |
+
+## Building the exe from the code
+
+The entire app is `hevc_player.py`. To rebuild the exe yourself (needs Python 3.11+ once, only for building — users never need it):
 
 ```bat
-pip install -r requirements.txt
-python hevc_player.py
-```
-
-## Build the exe yourself
-
-```bat
-pip install pyinstaller
+pip install -r requirements.txt pyinstaller
 python make_icon.py
 python -m PyInstaller --noconfirm --clean --windowed --onefile --name HEVCPlayer --icon icon.ico --collect-all av --collect-all sounddevice hevc_player.py
 ```
