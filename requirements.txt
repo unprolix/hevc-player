@@ -1,0 +1,4 @@
+av
+sounddevice
+numpy
+pillow
