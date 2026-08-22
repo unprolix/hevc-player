@@ -2,12 +2,12 @@
 
 A free, standalone HEVC/H.265 video player for Windows. No paid codecs, no Microsoft Store tax — it ships with its own FFmpeg-based decoder.
 
-![platform](https://img.shields.io/badge/platform-Windows-blue) ![license](https://img.shields.io/badge/license-MIT-green)
+![platform](https://img.shields.io/badge/platform-Windows-blue) ![license](https://img.shields.io/badge/source%20license-MIT-green)
 
 ## Download & run
 
-1. Go to [Releases](../../releases) and download **`HEVCPlayer.exe`**
-2. Double-click it
+1. Go to [Releases](../../releases) and download **`HEVCPlayer.exe`** (and `THIRD-PARTY-NOTICES.md` next to it)
+2. Double-click the exe
 
 That's it. It's fully portable — a brand new Windows 10/11 PC needs **nothing installed**: no Python, no codecs, no installer.
 
@@ -68,6 +68,31 @@ Output: `dist\HEVCPlayer.exe`
 
 The app decodes video/audio through **PyAV** (FFmpeg bindings) in a background demux thread. Audio PCM is played through a PortAudio callback whose sample counter acts as the master clock; video frames are displayed when their PTS is due, keeping lipsync. Seek resets queues, flushes decoders, and re-syncs both streams.
 
-## License
+## Licensing
+
+The original HEVC Player source code written by Dino288 is licensed
+under the MIT License. See [`LICENSE`](LICENSE).
+
+HEVC Player also uses third-party software, including PyAV and FFmpeg.
+Those components are **not** licensed under this project's MIT License
+and remain subject to their respective licenses. See
+[`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md), which is also
+attached to each release alongside the exe.
+
+### HEVC / H.265 patent notice
+
+HEVC Player includes HEVC/H.265 decoding functionality through
+third-party software components.
+
+The MIT license for this project's original source code does not grant
+patent rights to HEVC/H.265 or to any third-party technology.
+
+HEVC/H.265 may be subject to patents in some jurisdictions. Users and
+distributors are responsible for determining whether additional patent
+licenses are required for their particular use or distribution of the
+software.
+
+This project does not represent that use or distribution of HEVC/H.265
+functionality is free from third-party patent claims.
 
 MIT

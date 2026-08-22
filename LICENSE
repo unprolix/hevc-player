@@ -19,3 +19,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+------------------------------------------------------------------------------
+
+Scope of this license:
+
+The MIT License above applies to the original source code of HEVC Player
+written by Dino288. Third-party components bundled with or used by HEVC
+Player (including but not limited to Python, PyAV, FFmpeg, NumPy, Pillow,
+sounddevice/PortAudio, Tcl/Tk) are NOT covered by this license and remain
+subject to their respective licenses. See THIRD-PARTY-NOTICES.md.
+
+This license does not grant any patent rights, including rights relating to
+HEVC/H.265 or other video technologies. See the "Licensing" section of
+README.md.
