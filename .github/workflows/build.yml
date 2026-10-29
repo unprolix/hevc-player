@@ -1,0 +1,20 @@
+name: Build HEVCPlayer
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 6d1e10b9371a5ae358b0e7551f4eb350645d9761   # the exact commit reviewed
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: pip install -r requirements.txt pyinstaller
+      - run: python make_icon.py
+      - run: python -m PyInstaller --noconfirm --clean --windowed --onefile --name HEVCPlayer --icon icon.ico --collect-all av --collect-all sounddevice hevc_player.py
+      - run: Get-FileHash dist\HEVCPlayer.exe -Algorithm SHA256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HEVCPlayer
+          path: dist/HEVCPlayer.exe
